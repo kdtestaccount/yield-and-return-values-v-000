@@ -1,12 +1,21 @@
 require 'pry'
 
 def hello(array)
-  i = 0
-  while i < array.length
-    yield(array[i])
-    i += 1
+  if array != []
+    i = 0
+    collection = []
+    while i < array.length
+      yield(make_sentence(array, i))
+      collection << object
+      i += 1
+    end
   end
+  collection
 end
 
+def make_sentence(array, int)
+  "This, #{array[int]}, is a sentence.}"
+end
 
-hello(["Tim", "Tom", "Jim"]) { |name| puts "Hi, #{name}" }
+names = ["Tim", "Tom", "Jim"]
+hello(names)
